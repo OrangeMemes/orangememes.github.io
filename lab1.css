@@ -47,14 +47,14 @@ body {
     word-wrap: break-word;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 800px)  {
     .content {
         display: flex;
         flex-direction: column-reverse;
     }
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 800px) {
 
     .content {
         display: flex;
