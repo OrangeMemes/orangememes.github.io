@@ -1,0 +1,68 @@
+html {
+}
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content {
+    min-height: 300px;
+    height: auto;
+    flex-grow: 1;
+}
+
+.header, .footer    {
+    padding: 10px;
+    background-color: #F0A0F0;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.header h1 {
+    font-size: 25pt;
+    white-space: nowrap;
+    font-family: Lobster, "Comic Sans MS", cursive;
+}
+
+.footer p {
+    font-size: 10pt;
+    white-space: nowrap;
+    font-family: Lobster, "Comic Sans MS", cursive;
+}
+
+.authorInfo a {
+    white-space: nowrap;
+}
+
+.picDescription {
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .info {
+        max-width: 300px;
+        flex-grow: 1;
+    }
+
+    .picture {
+        flex-grow: 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+}
