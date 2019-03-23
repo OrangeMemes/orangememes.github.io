@@ -47,14 +47,15 @@ body {
     word-wrap: break-word;
 }
 
-@media (max-width: 800px)  {
+@media handheld, (max-device-width: 700px)  {
     .content {
         display: flex;
         flex-direction: column-reverse;
+        justify-content: flex-end;
     }
 }
 
-@media (min-width: 800px) {
+@media (min-device-width: 700px) {
 
     .content {
         display: flex;
