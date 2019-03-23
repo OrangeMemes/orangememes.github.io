@@ -1,5 +1,4 @@
-html {
-}
+
 body {
     margin: 0;
     display: flex;
@@ -10,7 +9,13 @@ body {
 .content {
     min-height: 300px;
     height: auto;
+    width: 100vw;
     flex-grow: 1;
+}
+
+.picture > img {
+    display: block;
+    margin: auto;
 }
 
 .header, .footer    {
@@ -50,19 +55,20 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-    .info {
-        max-width: 300px;
-        flex-grow: 1;
-    }
-
-    .picture {
-        flex-grow: 0;
-    }
 
     .content {
         display: flex;
         flex-direction: row;
     }
+
+    .info {
+        max-width: 300px;
+    }
+
+    .picture {
+        flex-grow: 1;
+    }
+
 
 
 }
