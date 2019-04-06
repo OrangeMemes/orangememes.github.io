@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Арбузы</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="green lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Арбузы</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#index-banner">Главная</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#long-text">Описание</a></li>
+            <li><a href="#form">Заказать</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a href="#index-banner">Главная</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#long-text">Описание</a></li>
+            <li><a href="#form">Заказать</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center white-text">Арбузы с доставкой в офис</h1>
+        <div class="row center">
+            <h5 class="header col s12 light white-text">По всему Петербургу в течение часа.</h5>
+        </div>
+        <div class="row center">
+            <a href="http://materializecss.com/getting-started.html" id="download-button"
+               class="btn-large waves-effect waves-light orange">Заказать за 100 ₽</a>
+        </div>
+        <br><br>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="section" id="advantages">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center green-text"><i class="material-icons">settings</i></h2>
+                    <h5 class="center">Жуйте мякоть</h5>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center green-text"><i class="material-icons">delete</i></h2>
+                    <h5 class="center">Выбрасывайте корки</h5>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center green-text"><i class="material-icons">group</i></h2>
+                    <h5 class="center">Плюйтесь семечками в коллег</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section" id="long-text">
+        <div class="row flex">
+            <div class="col s12 m6 l4">
+                <img src="1122124.jpg" class="cover-img" alt="арбузы">
+            </div>
+            <div class="col s12 m6 l8">
+                <h2 class="center">Что за арбузы?</h2>
+                <p>Арбу&#769;з обыкнове&#769;нный (лат. Citr&uacute;llus lan&aacute;tus)&nbsp;&mdash; однолетнее травянистое растение, вид рода Арбуз (Citrullus) семейства Тыквенные (Cucurbitaceae).
+
+                    Бахчевая культура. Плод&nbsp;&mdash; тыквина[2], шаровидной, овальной, уплощённой или цилиндрической формы; окраска коры от&nbsp;белой и&nbsp;жёлтой до&nbsp;тёмно-зелёной с&nbsp;рисунком в&nbsp;виде полос и&nbsp;пятен; мякоть розовая, красная, малиновая, реже&nbsp;&mdash; белая и&nbsp;жёлтая.</p>
+            </div>
+        </div>
+
+        <div class="row flex">
+            <div class="col s12 m6 l8">
+                <h2 class="center">Как доставляете?</h2>
+                <p>Вы&nbsp;делаете заказ&nbsp;&mdash; и&nbsp;мы&nbsp;сразу&nbsp;же выезжаем к&nbsp;вам с&nbsp;партией арбузов. Расскажите нам, сколько всего сотрудников находится в&nbsp;офисе, и&nbsp;мы&nbsp;подскажем, сколько плодов можно заказать, чтобы точно хватило всем. Если офис в&nbsp;центре, привезём за&nbsp;полчаса. Иначе&nbsp;&mdash; за&nbsp;час.</p>
+            </div>
+            <div class="col s12 m6 l4">
+                <img src="hapco_02.jpg" class="cover-img" alt="арбузы">
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="form">
+        <h5 class="center">Закажите сейчас, и первая доставка обойдётся всего в 100 ₽</h5>
+        <form class="row flex" action="#form">
+            <div class="input-field col s12 m5">
+                <textarea id="name-field" class="materialize-textarea"></textarea>
+                <label for="name-field">Как к Вам обращаться?</label>
+            </div>
+            <div class="input-field col s12 m5">
+                <input type="tel" id="phone-number" class="validate">
+                <label for="phone-number">Телефон</label>
+            </div>
+            <button class="btn waves-effect waves-light green col s12 m2 center-self-vertically" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <br><br>
+</div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>
