@@ -1,3 +1,48 @@
+function createDownloadButton(canvas) {
+    let downloadButton = document.createElement('a');
+    downloadButton.innerHTML = 'Download image';
+    downloadButton.href = canvas.toDataURL();
+    downloadButton.download = "quote.png";
+    downloadButton.style =
+        "  margin: 30px;\n" +
+        "  padding: 10px;\n" +
+        "\n" +
+        "  overflow: hidden;\n" +
+        "\n" +
+        "  border-width: 0;\n" +
+        "  outline: none;\n" +
+        "text-decoration: none;" +
+        "  border-radius: 2px;\n" +
+        "  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);\n" +
+        "  \n" +
+        "  background-color: #2ecc71;\n" +
+        "  color: #ecf0f1;\n" +
+        "  ";
+    return downloadButton;
+}
+
+function breakdownText(textString) {
+    let words = textString.split(new RegExp("\\s"));
+    let text = [];
+    let currentLine = words.shift();
+
+    while (words.length > 0) {
+        let currentWord = words.shift();
+        if (ctx.measureText(currentLine + currentWord).width < canvas.width * .8) {
+            currentLine += " " + currentWord;
+        } else {
+            text.push(currentLine);
+            currentLine = currentWord;
+        }
+    }
+
+    text.push(currentLine);
+    return text;
+}
+
+
+
+
 let canvas = document.createElement("canvas");
 canvas.width = 550;
 canvas.height = 550;
@@ -40,21 +85,7 @@ imageArrayPromise.then(images => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     textPromise.then(textResponse => {
-        let words = textResponse.split(new RegExp("\\s"));
-        let text = [];
-        let currentLine = words.shift();
-
-        while (words.length > 0) {
-            let currentWord = words.shift();
-            if (ctx.measureText(currentLine + currentWord).width < canvas.width * .8) {
-                currentLine += " " + currentWord;
-            } else {
-                text.push(currentLine);
-                currentLine = currentWord;
-            }
-        }
-
-        text.push(currentLine);
+        let text = breakdownText(textResponse);
 
         ctx.fillStyle = '#000';
 
@@ -62,26 +93,7 @@ imageArrayPromise.then(images => {
         for (let i = 0; i < text.length; i++) {
             ctx.fillText(text[i], canvas.width / 2, canvas.height / 2 - FONT_PX * middleLineNumber + FONT_PX * i);
         }
-
-        let downloadButton = document.createElement('a');
-        downloadButton.innerHTML = 'Download image';
-        downloadButton.href = canvas.toDataURL();
-        downloadButton.download = "quote.png";
-        downloadButton.style =
-            "  margin: 30px;\n" +
-            "  padding: 10px;\n" +
-            "\n" +
-            "  overflow: hidden;\n" +
-            "\n" +
-            "  border-width: 0;\n" +
-            "  outline: none;\n" +
-            "text-decoration: none;" +
-            "  border-radius: 2px;\n" +
-            "  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);\n" +
-            "  \n" +
-            "  background-color: #2ecc71;\n" +
-            "  color: #ecf0f1;\n" +
-            "  ";
+        let downloadButton = createDownloadButton(canvas);
         document.body.appendChild(downloadButton);
     })
 });
