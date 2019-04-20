@@ -6,7 +6,7 @@ document.body.appendChild(canvas);
 let ctx = canvas.getContext("2d");
 
 const FONT_PX = 30;
-ctx.font = `${FONT_PX}px Helvetica`;
+ctx.font = `bold ${FONT_PX}px Helvetica`;
 ctx.textAlign = 'center';
 ctx.verticalAlign = 'middle';
 ctx.textBaseline = 'top';
@@ -36,7 +36,7 @@ imageArrayPromise.then(images => {
     ctx.drawImage(images[1], offset.x + imageSize.width, offset.y);
     ctx.drawImage(images[2], offset.x, offset.y + imageSize.height);
     ctx.drawImage(images[3], offset.x + imageSize.width, offset.y + imageSize.height);
-    ctx.fillStyle = "rgba(255,255,255,0.6)";
+    ctx.fillStyle = "rgba(255,255,255,0.5)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     textPromise.then(textResponse => {
