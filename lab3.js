@@ -21,14 +21,14 @@ function createDownloadButton(canvas) {
     return downloadButton;
 }
 
-function breakdownText(textString) {
+function breakdownText(textString, canvas) {
     let words = textString.split(new RegExp("\\s"));
     let text = [];
     let currentLine = words.shift();
 
     while (words.length > 0) {
         let currentWord = words.shift();
-        if (ctx.measureText(currentLine + currentWord).width < canvas.width * .8) {
+        if (canvas.getContext("2d").measureText(currentLine + currentWord).width < canvas.width * .8) {
             currentLine += " " + currentWord;
         } else {
             text.push(currentLine);
@@ -85,7 +85,7 @@ imageArrayPromise.then(images => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     textPromise.then(textResponse => {
-        let text = breakdownText(textResponse);
+        let text = breakdownText(textResponse, canvas);
 
         ctx.fillStyle = '#000';
 
