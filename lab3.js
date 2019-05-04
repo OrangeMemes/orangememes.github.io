@@ -17,7 +17,7 @@ function createDownloadButton(canvas) {
         "  \n" +
         "  background-color: #2ecc71;\n" +
         "  color: #ecf0f1;\n" +
-        "  ";
+        " font-family: Helvetica; ";
     return downloadButton;
 }
 
@@ -44,21 +44,20 @@ function breakdownText(textString, canvas) {
 
 
 let canvas = document.createElement("canvas");
-canvas.width = 550;
-canvas.height = 550;
-document.body.appendChild(canvas);
+canvas.width = 1500;
+canvas.height = 1500;
 
 let ctx = canvas.getContext("2d");
 
-const FONT_PX = 30;
+const FONT_PX = 100;
 ctx.font = `bold ${FONT_PX}px Helvetica`;
 ctx.textAlign = 'center';
 ctx.verticalAlign = 'middle';
 ctx.textBaseline = 'top';
 
 let imageSize = {
-    width: 420,
-    height: 420
+    width: 1000,
+    height: 1000
 };
 let offset = {
     x: Math.ceil(Math.random() * (canvas.width - 2 * imageSize.width - 1)),
@@ -91,8 +90,15 @@ imageArrayPromise.then(images => {
 
         let middleLineNumber = text.length / 2;
         for (let i = 0; i < text.length; i++) {
-            ctx.fillText(text[i], canvas.width / 2, canvas.height / 2 - FONT_PX * middleLineNumber + FONT_PX * i);
+            ctx.fillText(text[i], canvas.width / 2, canvas.height / 2 + FONT_PX * (i - middleLineNumber));
         }
+
+        let quoteImage = new Image();
+        quoteImage.src = canvas.toDataURL();
+        quoteImage.height = canvas.height / 3;
+        quoteImage.width = canvas.width / 3;
+        document.body.appendChild(quoteImage);
+
         let downloadButton = createDownloadButton(canvas);
         document.body.appendChild(downloadButton);
     })
